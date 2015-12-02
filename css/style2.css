@@ -1,0 +1,23 @@
+table,th,td{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding:5px;
+    text-align: center;
+    font-weight: normal;
+    line-height:30px;
+    height: 30px;
+}
+
+ .table > tbody > tr > td{
+     line-height:30px;
+     height: 30px;
+ }
+.table > thead > tr > th{
+    border-bottom:1px solid grey;
+    background-color:grey;
+    opacity:0.5;
+    color:#ffffff;
+    font-weight: normal;
+    height:30px;
+    line-height:30px;
+}
