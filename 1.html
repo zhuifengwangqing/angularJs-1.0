@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--ng-app 指令告诉 AngularJS，
+<div> 元素是 AngularJS 应用程序 的"所有者"。-->
+   <div  ng-app="myapp"  ng-init="name='王琦';quantity=3;cost=5;person={firstName:'John',lastName:'Doe'};points=[1,15,19,2,40];names=[{name:'小红',sex:100},{name:'小刚',sex:78}];hour=13"  ng-controller="mycontr">
+       <p>在此输入框中输入：</p>
+       <p>
+           name:<input type="text"  ng-model="name"  >
+       </p>
+       <p ng-bind="name"></p>
+       <p>
+           数字一: <input type="number" ng-model="a1">
+       </p>
+       <p>
+           数字二: <input type="number" ng-model="a2">
+       </p>
+       <p>
+           两数字之和:{{a1+a2}}
+       </p>
+       <p>总价:{{(quantity*cost)|currency}}</p>
+       <p>{{person.firstName+" "+person.lastName|lowercase}}</p>
+       <p>第三个值为:{{points[2]}}</p>
+       <p>我的第一个表达式： {{ 5 + 5 }}</p>
+       <ul>
+           <li ng-repeat="v in points"  style="color:red">{{v}}</li>
+       </ul>
+
+       <ul>
+           <li ng-repeat="v in names|orderBy:'sex'"  style="color:green">
+               {{v.name+"====="+v.sex}}
+           </li>
+       </ul>
+
+      <p> 名: <input type="text" ng-model="firstName1"><br></p>
+      <p> 姓: <input type="text" ng-model="lastName1"><br></p>
+      <p> 姓名：{{fullName()}} </p>
+      <p><input type="text"  ng-model="test"></p>
+       <ul>
+           <li ng-repeat="v in points|filter:test" style="color: blue;">
+               {{v}}
+           </li>
+       </ul>
+
+       <p>========远程读取数据服务器的数据======</p>
+       <ul>
+           <li ng-repeat="v in users" style="color: cadetblue">
+               {{v.f_id+"==="+v.f_name+"==="+v.f_sex+"==="+v.f_phone}}
+           </li>
+       </ul>
+
+       <p>========远程读取数据服务器的数据==表格的形式显示====</p>
+       <p><button  ng-click="toggle()">隐藏/显示</button></p>
+       <table  ng-hide="myTable">
+             <thead>
+                   <tr>
+                       <th>序号</th>
+                       <th>名字</th>
+                       <th>性别</th>
+                       <th>手机号</th>
+                   </tr>
+             </thead>
+
+             <tbody>
+
+                   <tr ng-repeat="v in users | orderBy:'f_sex'" style="color: coral">
+                       <td>{{$index+1}}</td>
+                       <td>{{v.f_name|uppercase}}</td>
+                       <td>{{v.f_sex}}</td>
+                       <td ng-if="$odd" style="background-color:red;color:#ffffff">{{v.f_phone}}</td>
+                       <td ng-if="$even">{{v.f_phone}}</td>
+                   </tr>
+
+             </tbody>
+       </table>
+
+       <p>====angularjs html dom====</p>
+       <p><button  ng-disabled="mySwitch">点我!</button></p>
+       <p><input type="checkbox"  ng-model="mySwitch">按钮</p>
+       <p>{{mySwitch}}</p>
+       <p ng-show="true">我是可见1</p>
+       <p ng-show="false">我是不可见1</p>
+       <p ng-show="hour>11">我是可见2</p>
+       <p ng-hide="true">我是不可见的1。</p>
+       <p ng-hide="false">我是可见的3。</p>
+       <p><button ng-click="count=count+1">点我</button></p>
+       <p>{{count}}</p>
+
+       <p>====angularjs 表单====</p>
+
+       <form  novalidate>
+           <p><input type="number"  ng-model="num.a1"></p>
+           <p><input type="number"  ng-model="num.a2"></p>
+           <p><button  ng-click="reset()">重置</button></p>
+       </form>
+       <p>form={{num}}</p>
+       <p>master={{master()}}</p>
+   </div>
+
+
+  <script  src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+  <script  src="js/1.js"></script>
+
+</body>
+</html>

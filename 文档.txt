@@ -1,0 +1,66 @@
+1、angularJs 支持IE8以上的浏览器
+2、ng-model:指令把元素值（比如输入域的值）绑定到应用程序
+           为应用程序数据提供类型验证（number、email、required）。
+           为应用程序数据提供状态（invalid、dirty、touched、error）。
+           为 HTML 元素提供 CSS 类。
+           绑定 HTML 元素到 HTML 表单
+   ng-app:指令定义一个 AngularJS 应用程序。在网页加载完毕时会自动引导（自动初始化）应用程序
+   ng-bind:指令把应用程序数据绑定到 HTML 视图.
+   ng-directives:扩展了 HTML
+   ng-init:指令初始化 AngularJS 应用程序变量。通常情况下，不使用 ng-init。您将使用一个控制器或模块来代替它。
+   ng-controller 定义了控制器。
+   ng-repeat 指令会重复一个 HTML 元素;指令用在一个对象数组上
+   ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性。
+   ng-show 指令隐藏或显示一个 HTML 元素。
+   ng-hide 指令用于隐藏或显示 HTML 元素。
+   ng-click 指令定义了 AngularJS 点击事件。
+3、通过指令扩展html,且通过表达式绑定数据到html
+4、如果您移除了 ng-app 指令，HTML 将直接把表达式显示出来，不会去计算表达式的结果
+5、可以使用 data-ng- 来让网页对 HTML5 有效
+6、表达式写在双大括号内：{{ expression }},它们可以包含文字、运算符和变量
+7、{{ firstName + " " + lastName }}等价于<span ng-bind="firstName + ' ' + lastName"></span>
+8、AngularJS 字符串就像 JavaScript 字符串：
+   AngularJS 对象就像 JavaScript 对象：
+   AngularJS 数组就像 JavaScript 数组：
+
+   AngularJS 表达式 与 JavaScript 表达式
+   1、类似于 JavaScript 表达式，AngularJS 表达式可以包含字母，操作符，变量。
+
+   2、与 JavaScript 表达式不同，AngularJS 表达式可以写在 HTML 中。
+
+   3、与 JavaScript 表达式不同，AngularJS 表达式不支持条件判断，循环及异常。
+
+   4、与 JavaScript 表达式不同，AngularJS 表达式支持过滤器。
+9、AngularJS 完美支持数据库的 CRUD（增加Create、读取Read、更新Update、删除Delete）应用程序。
+  把实例中的对象想象成数据库中的记录。
+10、AngularJS 控制器 控制 AngularJS 应用程序的数据
+
+11、过滤器
+    过滤器可以使用一个管道字符（|）添加到表达式和指令中。
+     1、转化数据
+        currency==》格式化数字为货币格式。
+        filter==》从数组项中选择一个子集。
+        lowercase==》格式化字符串为小写
+        orderBy==》根据某个表达式排列数组 orderBy 过滤器根据表达式排列数组：
+        uppercase==》格式化字符串为大写
+
+12、$http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据
+13、如果你需要从不同的服务器（不同域名）上获取数据就需要使用跨域 HTTP 请求。
+    跨域请求在网页上非常常见。很多网页从不同服务器上载入 CSS, 图片，Js脚本等。
+14、模块定义了一个应用程序。
+    模块是应用程序中不同部分的容器。
+    模块是应用控制器的容器。
+    控制器通常属于一个模块
+    AngularJS 应用程序将模块和控制器包含在 JavaScript 文件中。
+
+    var app = angular.module("myApp", []);
+    在模块定义中 [] 参数用于定义模块的依赖关系。
+    中括号[]表示该模块没有依赖，如果有依赖的话会在中括号写上依赖的模块名字
+15、JavaScript 中应避免使用全局函数。因为他们很容易被其他脚本文件覆盖。
+16、novalidate 属性是在 HTML5 中新增的。禁用了使用浏览器的默认验证。
+17、客户端的验证不能确保用户输入数据的安全，所以服务端的数据验证也是必须的。
+18、全局 API 函数使用 angular 对象进行访问
+    angular.lowercase()====》转换字符串为小写
+    angular.uppercase()====》转换字符串为大写
+    angular.isString()=====》判断给定的对象是否为字符串，如果是返回 true
+    angular.isNumber()=====》判断给定的对象是否为数字，如果是返回 true。
