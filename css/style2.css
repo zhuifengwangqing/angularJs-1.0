@@ -21,3 +21,14 @@ table,th,td{
     height:30px;
     line-height:30px;
 }
+
+form{
+    margin-top:50px;
+    margin-left:50px;
+}
+
+label{
+    margin-right:5px;
+    font-weight: normal;
+    font-size:15px;
+}

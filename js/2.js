@@ -8,4 +8,25 @@ myapp.controller('userCtrl', function ($scope,$http) {
         $scope.users=response.list;
     });
 
+    //初始化字段状态
+    $scope.user.name="";
+    $scope.user.phone="";
+    $scope.edit=true;
+    $scope.error=false;
+    $scope.incomplete=false;
+
+
+    //
+    //$scope.addUser=function(id){
+    //    //添加用户
+    //    if(id=="new"){
+    //        $scope.edit=true;
+    //        $scope.incomplete=true;
+    //
+    //
+    //
+    //    }
+    //};
+
+
 });
