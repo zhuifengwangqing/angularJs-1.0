@@ -26,7 +26,7 @@
                 <td>{{user.f_sex}}</td>
                 <td>{{user.f_phone}}</td>
                 <td>
-                    <button  class="btn  btn-primary"  ng-click="editUser(user.f_id)">
+                    <button  class="btn  btn-primary"  ng-click="editUser($index+1)">
                         <span class="glyphicon glyphicon-pencil">编辑</span>
                     </button>
                 </td>
@@ -35,7 +35,7 @@
     </table>
 
     <hr>
-        <button class="btn btn-success"  ng-click="addUser('new')">
+        <button class="btn btn-success"  ng-click="addUser()">
              <span  class="glyphicon  glyphicon-user">创建新用户</span>
         </button>
     <hr>
@@ -43,11 +43,11 @@
     <h3 ng-show="edit">创建新用户</h3>
     <h3 ng-hide="edit">编辑用户</h3>
 
-    <form  class="form-horizontal">
+    <form  class="form-horizontal" ng-submit="submit1()">
         <div  class="form-group">
             <label class="col-sm-2 control-label">姓名:</label>
             <div class="col-sm-4">
-                <input type="text" ng-model="user.name"  ng-disabled="!edit"  class="form-control" placeholder="请输入姓名">
+                <input type="text" ng-model="user_name"  ng-disabled="!edit"  class="form-control" placeholder="请输入姓名">
             </div>
         </div>
 
@@ -55,32 +55,32 @@
             <label class="col-sm-2 control-label">性别:</label>
             <div class=" col-sm-4">
                 <label class="radio-inline">
-                     <input type="radio"    ng-model="user.sex"  value="1">男
+                     <input type="radio"    ng-model="user_sex"  value="1">男
                 </label>
                 <label class="radio-inline">
-                     <input type="radio"    ng-model="user.sex"  value="0">女
+                     <input type="radio"    ng-model="user_sex"  value="0">女
                 </label>
             </div>
         </div>
 
         <div  class="form-group">
-            <label class="col-sm-2 control-label">电话号码:</label>
+            <label class="col-sm-2 control-label">手机号码:</label>
             <div class="col-sm-4">
-                <input type="text" ng-model="user.phone" class="form-control"  placeholder="请输入电话号码">
+                <input type="text" ng-model="user_phone" class="form-control"  placeholder="请输入电话号码">
             </div>
         </div>
-    </form>
-
-
-        <button  class="btn btn-success"  ng-disabled="error||incomplete">
+        <input type="hidden"  ng-model="user_id">
+        <button  class="btn btn-success"  ng-disabled="incomplete">
             <span  class="glyphicon glyphicon-save">
-                <span  ng-show="edit"  ng-click="submit('new')">提交</span>
-                <span  ng-hide="edit"  ng-click="submit('edit')">修改</span>
+                <span>提交</span>
             </span>
         </button>
 
+    </form>
+
+
+
     <hr>
-    <p>form={{user}}</p>
     <hr>
 
 

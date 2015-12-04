@@ -14,6 +14,8 @@
    ng-show 指令隐藏或显示一个 HTML 元素。
    ng-hide 指令用于隐藏或显示 HTML 元素。
    ng-click 指令定义了 AngularJS 点击事件。
+   ng-submit表单提交form标签
+
 3、通过指令扩展html,且通过表达式绑定数据到html
 4、如果您移除了 ng-app 指令，HTML 将直接把表达式显示出来，不会去计算表达式的结果
 5、可以使用 data-ng- 来让网页对 HTML5 有效
