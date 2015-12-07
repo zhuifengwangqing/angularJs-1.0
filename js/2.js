@@ -11,10 +11,11 @@ myapp.controller('userCtrl', function ($scope,$http) {
     $scope.edit=true;
     $scope.incomplete=false;
 
-    $http_post=$http.post("http://angular_1.0_server.com/index.php/Home/Index");
+    $http_post=$http.post("http://angular_1.0_server.com/index.php/Home/Index/index");
     $http_post.success(function(response){
         $scope.users=response.list;
     });
+
 
     //编辑信息
     $scope.editUser=function(id){
@@ -38,20 +39,22 @@ myapp.controller('userCtrl', function ($scope,$http) {
 
     $scope.submit1=function(){
         console.log($scope.user_id);
-        console.log($scope.user_name);
         var formdata={
             'f_id':$scope.user_id,
             'f_name':$scope.user_name,
             'f_sex':$scope.user_sex,
             'f_phone':$scope.user_phone
         };
+
+        console.log(JSON.stringify(formdata)+"===");
         //向数据库修改或提交数据
         $http_post1=$http.post(
-            "http://angular_1.0_server.com/index.php/Home/moddata",
-            formdata
+            "http://angular_1.0_server.com/index.php/Home/Index/modData",
+            JSON.stringify(formdata)
+
         );
 
-        $http_post.success(function(response){
+        $http_post1.success(function(response){
             $scope.users=response.list;
         });
 
