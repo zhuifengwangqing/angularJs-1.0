@@ -1,6 +1,8 @@
 /**
  * Created by Administrator on 2015/12/1.
  */
+
+//var myapp=angular.module('myapp',[依赖注入]);
 var myapp=angular.module('myapp',[]);
 myapp.controller('mycontr', function ($scope,$http) {
     $scope.firstName1="";

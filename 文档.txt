@@ -5,7 +5,7 @@
            为 HTML 元素提供 CSS 类。
            绑定 HTML 元素到 HTML 表单
    ng-app:指令定义一个 AngularJS 应用程序。在网页加载完毕时会自动引导（自动初始化）应用程序
-   ng-bind:指令把应用程序数据绑定到 HTML 视图.
+   ng-bind:指令把应用程序数据绑定到 HTML 视图.保证用户看不到{{name}}
    ng-directives:扩展了 HTML
    ng-init:指令初始化 AngularJS 应用程序变量。通常情况下，不使用 ng-init。您将使用一个控制器或模块来代替它。
    ng-controller 定义了控制器。
@@ -15,7 +15,7 @@
    ng-hide 指令用于隐藏或显示 HTML 元素。
    ng-click 指令定义了 AngularJS 点击事件。
    ng-submit表单提交form标签
-
+   ng-transclude  嵌套
 3、通过指令扩展html,且通过表达式绑定数据到html
 4、如果您移除了 ng-app 指令，HTML 将直接把表达式显示出来，不会去计算表达式的结果
 5、可以使用 data-ng- 来让网页对 HTML5 有效
@@ -68,6 +68,28 @@
     angular.isNumber()=====》判断给定的对象是否为数字，如果是返回 true。
 
 
+18、服务service 和 factory provider都是provider==
+       service共享数据  依赖注入
+
+       native app
+       web app
+       hybrid app 复合式 原生与html结合
+       phonegap
+       http://phonegap.com
+       appcan
+       http://www.appcan.cn/index.html
+
+       Intel xdk
+       node
+
+       ionic+angularjs
+       跨终端web :http://wwww.imooc.com/view/43
+
+       集成测试
+       tdd
+       unit
+       e2e
+       protractor
 
 
 代码编辑工具
@@ -77,3 +99,7 @@
 依赖管理工具
 单元测试工具
 集成测试工具
+
+异步模块加载  requirejs
+seo 搜索引擎优化
+ajax对seo是个灾难

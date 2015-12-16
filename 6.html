@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <title></title>
+    <style type="text/css">
+        div[contenteditable]{
+            cursor:pointer;
+            background-color:ivory;
+            height:40px;
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+  <div class="row" style="width: 100%;margin:50px auto;">
+      <div class="col-md-2">
+          <superman  strength>动感超人--力量</superman>
+      </div>
+  </div>
+
+
+  <div class="row" style="width: 100%;margin:50px auto;">
+      <div class="col-md-2">
+          <superman  strength  speed>动感超人--力量+敏捷</superman>
+      </div>
+  </div>
+
+
+  <div class="row" style="width: 100%;margin:50px auto;">
+      <div class="col-md-2">
+          <superman  strength  speed  light>动感超人--力量+敏捷+发光</superman>
+      </div>
+  </div>
+
+  <div class="row"  style="width:100%;margin:50px auto;">
+      <div class="col-md-2">
+          <myinput></myinput>
+          <myinput></myinput>
+          <myinput></myinput>
+          <myinput></myinput>
+          <myinput></myinput>
+      </div>
+  </div>
+
+
+  <div class="row"  style="width:100%;margin:50px auto;" ng-controller="myctrl">
+      <div class="col-md-2">
+          <drink  flavor="{{ctrlFlavor}}"  mys="{{ctrlMys}}"></drink>
+      </div>
+  </div>
+
+  <div class="row"  style="width:100%;margin:50px auto;">
+      <div class="col-md-2"  ng-controller="myi">
+          Ctrl:
+          <input type="text" ng-model="ctrlmyi">
+          <br>
+          Directive:
+          <sms  flavor="ctrlmyi"></sms>
+      </div>
+  </div>
+
+  <div class="row" style="width:100%;margin:50px auto">
+      <div  ng-controller="greet12">
+          <greeting  greet="sayHello(name)"></greeting>
+          <greeting  greet="sayHello(name)"></greeting>
+          <greeting  greet="sayHello(name)"></greeting>
+      </div>
+
+  </div>
+
+  <!--novalidate 属性规定当提交表单时不对其进行验证。-->
+  <!--$valid ng-valid Boolean 告诉我们这一项当前基于你设定的规则是否验证通过-->
+  <!--$invalid ng-invalid Boolean 告诉我们这一项当前基于你设定的规则是否验证未通过-->
+  <!--$pristine ng-pristine Boolean 如果表单或者输入框没有使用则为True-->
+  <!--$dirty ng-dirty Boolean 如果表单或者输入框有使用到则为True-->
+  <!--Angular 也提供了有关表单及其输入框的类，以便你能够依据每一个状态设置其样式.-->
+  <div class="row" style="width:100%;margin:50px auto">
+      <form name="myform" ng-submit="save()"  novalidate>
+          name:<input type="text" name="uname" placeholder="请输入名字" ng-model="user.username" required="required" style="margin:10px auto"><br>
+          email: <input type="email" name="uemail" placeholder="请输入邮箱" ng-model="user.email" required="required" style="margin:10px auto"><br>
+          <div ng-show="myform.uemail.$dirty && myform.uemail.$invalid">
+              <span  ng-show="myform.uemail.$error.required">请输入邮箱</span>
+              <span  ng-show="myform.uemail.$error.email">不合法的邮箱</span>
+          </div>
+          <input type="checkbox"  ng-model="user.agree"  name="userAgree"  required>
+          I agree:<br>
+          <input type="text"  ng-model="user.agreeSign" ng-show="user.agree" required style="margin:10px auto"><br>
+          <div ng-show="!user.agree||!user.agreeSign">
+              please agree and sign
+          </div>
+          <input type="button" class="btn btn-success" style="margin:10px auto" ng-disabled="myform.$invalid" value="提交">
+      </form>
+  </div>
+
+  <div style="margin:50px auto;width:80%">
+      <div  contenteditable="true"  ng-model="content"  title="点击编辑">some</div>
+      <pre>model = {{content}}</pre>
+  </div>
+
+  <span>{{'1288323623006' | date:'MM/dd/yyyy @ h:mma'}}</span><br>
+
+
+<script  SRC="js/angular-1.3.0.js"></script>
+<script  src="js/6.js"></script>
+</body>
+</html>

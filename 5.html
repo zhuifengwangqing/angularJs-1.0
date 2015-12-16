@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div  ng-controller="MyCtrl">
+       {{greeting}}
+    </div>
+
+    <div ng-controller="myloader1">
+        <loader howToLoader="loader1()"><h1>数据滑动加载</h1></loader>
+    </div>
+
+    <div ng-controller="myloader2" style="margin-top:20px;">
+        <loader howToLoader="loader2()">数据滑动加载2</loader>
+    </div>
+
+
+<script src="js/angular-1.3.0.js"></script>
+<script src="js/Directive&Controller.js"></script>
+</body>
+</html>
