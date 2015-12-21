@@ -3,8 +3,29 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <script src="js/jquery-1.11.2.min.js"  type="application/javascript"  ></script>
 </head>
 <body>
 <input type="text" name="aa" value="你可以输入文字后,鼠标移上来看看" onmouseover="this.title=this.value"/>
+
+<form   id="form">
+    姓名：<input type="text" name="name">
+    psw: <input type="text" name="pwd">
+    <input type="submit" value="提交" id="get">
+</form>
+<script>
+    $(function() {
+        $('#get').click(function() {
+            var params1 = $('#form').serialize();
+            var params2 = $('#form').serializeArray();
+            console.log(params1+"-=-");
+            console.log(params2+"==");
+            return false;
+
+        });
+    });
+</script>
 </body>
+
+
 </html>

@@ -29,9 +29,22 @@
                     <button  class="btn  btn-primary"  ng-click="editUser($index+1)">
                         <span class="glyphicon glyphicon-pencil">编辑</span>
                     </button>
+
+                    <button  class="btn  btn-danger"  ng-click="delUser(user.f_id)">
+                        <span class="glyphicon glyphicon-pencil">删除</span>
+                    </button>
                 </td>
             </tr>
+
         </tbody>
+        <tfoot style="text-align: center">
+        <tr>
+        <td>上一页</td>
+        <td>下一页</td>
+        <td>共4页</td>
+        <td>至 <input type="text">页</td>
+        </tr>
+        </tfoot>
     </table>
 
     <hr>
